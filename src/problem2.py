@@ -90,10 +90,15 @@ def problem2(sequence):
       :type sequence [list]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-    
+    highest_i = 0
+    for i in range(len(sequence)):
+        if abs(sequence[i]) > abs(sequence[highest_i]):
+            highest_i = i
+    return highest_i
+
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
