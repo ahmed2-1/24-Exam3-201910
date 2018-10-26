@@ -2,8 +2,8 @@
 Exam 3, problem 4.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October, 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tom Ahmed.  October, 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -77,13 +77,41 @@ And this one for n=14:
     :type n: int
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     ####################################################################
     # IMPORTANT: In your final solution for this problem,
     #   you must NOT use string multiplication.
     ####################################################################
-
+    for i in range(n):
+        final_string = ''
+        string_1 = ''
+        range_1 = n - i - 1
+        next_num = 1
+        for j in range(range_1+1):
+            string_1 = string_1 + ' '
+        for j in range(range_1, n):
+            string_1 = string_1 + str(next_num)
+            next_num += 1
+            if next_num == 10:
+                next_num = 0
+        string_1 += ' '
+        string_2 = ''
+        for j in range(i+2):
+            string_2 = string_2 + '*'
+        string_2 = string_2 + ' '
+        string_3 = ''
+        to_be_added = n
+        range_2 = n - i
+        for j in range(range_2):
+            if to_be_added >= 10:
+                to_be_added_single = str(to_be_added)[-1]
+            else:
+                to_be_added_single = to_be_added
+            string_3 = string_3 + str(to_be_added_single)
+            to_be_added -= 1
+        final_string = string_1 + string_2 + string_3
+        print(final_string)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
